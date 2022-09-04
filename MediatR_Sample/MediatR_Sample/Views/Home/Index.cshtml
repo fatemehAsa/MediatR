@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Models.Models.Category>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    dd {
+        margin: 10px;
+        padding: 10px;
+        width: 50%;
+        background:#eee;
+    }
+</style>
+@foreach (var item in Model)
+{
+    <dt>@item.BookGenre :</dt>
+    <dd>@item.GenreDescription
+    <a href="/Home/Edit/@item.GenreId" class="btn btn-warning">Edit</a>
+    <a href="/Home/Delete/@item.GenreId" class="btn btn-danger">Delete</a>
+        </dd>
+}
